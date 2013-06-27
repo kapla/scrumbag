@@ -6,3 +6,4 @@ imports:
     - { resource: assetic.yml }
     - { resource: doctrine.yml }
     - { resource: swiftmailer.yml }
+    - { resource: sp_bower.yml }
