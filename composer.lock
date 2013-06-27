@@ -3,11 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-<<<<<<< HEAD
-    "hash": "10e1f018a2ca7912a226065afe6902f3",
-=======
-    "hash": "7b7280f079745d1b5b12486c3bde2036",
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
+    "hash": "6caca995848d35d133f57e98607931a9",
     "packages": [
         {
             "name": "doctrine/common",
@@ -577,29 +573,6 @@
             "time": "2013-04-26 18:42:52"
         },
         {
-<<<<<<< HEAD
-            "name": "jms/twig-js",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/schmittjoh/twig.js.git",
-                "reference": "159542ed93a61801c1502497a65efbfd97628090"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/twig.js/zipball/159542ed93a61801c1502497a65efbfd97628090",
-                "reference": "159542ed93a61801c1502497a65efbfd97628090",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2",
-                "twig/twig": ">=1.8,<2.0-dev"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-=======
             "name": "jms/aop-bundle",
             "version": "1.0.0",
             "target-dir": "JMS/AopBundle",
@@ -724,23 +697,15 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.3-dev"
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
                 }
             },
             "autoload": {
                 "psr-0": {
-<<<<<<< HEAD
-                    "TwigJs": "src/"
-=======
                     "JMS\\DiExtraBundle": ""
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-<<<<<<< HEAD
-                "Apache2"
-=======
                 "Apache"
             ],
             "authors": [
@@ -793,7 +758,6 @@
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Apache"
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
             ],
             "authors": [
                 {
@@ -803,38 +767,6 @@
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
-<<<<<<< HEAD
-            "description": "twig.js, flexible, secure, and high-performance templating engine for Javascript",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2013-03-26 10:59:54"
-        },
-        {
-            "name": "jms/twig-js-bundle",
-            "version": "dev-master",
-            "target-dir": "JMS/TwigJsBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/schmittjoh/JMSTwigJsBundle.git",
-                "reference": "838b72b3ff11a351f00d5f4db4763f90e39f3631"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSTwigJsBundle/zipball/838b72b3ff11a351f00d5f4db4763f90e39f3631",
-                "reference": "838b72b3ff11a351f00d5f4db4763f90e39f3631",
-                "shasum": ""
-            },
-            "require": {
-                "jms/twig-js": "dev-master",
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": ">=2.0,<3.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "JMS\\TwigJsBundle": ""
-=======
             "description": "Class/method/property metadata management in PHP",
             "keywords": [
                 "annotations",
@@ -925,7 +857,6 @@
             "autoload": {
                 "psr-0": {
                     "JMS\\SecurityExtraBundle": ""
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -940,14 +871,6 @@
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
-<<<<<<< HEAD
-            "description": "Integrates twig.js into your Symfony2 application",
-            "homepage": "http://jmsyst.com/bundles/JMSTwigJsBundle",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2013-06-12 08:45:22"
-=======
             "description": "Enhances the Symfony2 Security Component by adding several new features",
             "homepage": "http://jmsyst.com/bundles/JMSSecurityExtraBundle",
             "keywords": [
@@ -958,7 +881,98 @@
                 "security"
             ],
             "time": "2013-06-09 13:11:23"
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
+        },
+        {
+            "name": "jms/twig-js",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/twig.js.git",
+                "reference": "159542ed93a61801c1502497a65efbfd97628090"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/twig.js/zipball/159542ed93a61801c1502497a65efbfd97628090",
+                "reference": "159542ed93a61801c1502497a65efbfd97628090",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "twig/twig": ">=1.8,<2.0-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "TwigJs": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "twig.js, flexible, secure, and high-performance templating engine for Javascript",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-03-26 10:59:54"
+        },
+        {
+            "name": "jms/twig-js-bundle",
+            "version": "dev-master",
+            "target-dir": "JMS/TwigJsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/JMSTwigJsBundle.git",
+                "reference": "838b72b3ff11a351f00d5f4db4763f90e39f3631"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSTwigJsBundle/zipball/838b72b3ff11a351f00d5f4db4763f90e39f3631",
+                "reference": "838b72b3ff11a351f00d5f4db4763f90e39f3631",
+                "shasum": ""
+            },
+            "require": {
+                "jms/twig-js": "dev-master",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.0,<3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "JMS\\TwigJsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Integrates twig.js into your Symfony2 application",
+            "homepage": "http://jmsyst.com/bundles/JMSTwigJsBundle",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-06-12 08:45:22"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1374,6 +1388,66 @@
             ],
             "description": "This bundle generates code for you",
             "time": "2013-06-05 17:32:22"
+        },
+        {
+            "name": "sp/bower-bundle",
+            "version": "dev-master",
+            "target-dir": "Sp/BowerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Spea/SpBowerBundle.git",
+                "reference": "d39fa423e05bbc11fe5a18b797590bcfe1db0a22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Spea/SpBowerBundle/zipball/d39fa423e05bbc11fe5a18b797590bcfe1db0a22",
+                "reference": "d39fa423e05bbc11fe5a18b797590bcfe1db0a22",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/assetic-bundle": ">=2.1,<3.0",
+                "symfony/framework-bundle": ">=2.1,<3.0",
+                "symfony/process": ">=2.1,<3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "symfony/console": ">=2.1,<3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sp\\BowerBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Parsiegla",
+                    "email": "martin.parsiegla@gmail.com",
+                    "homepage": "http://speanet.info"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/Spea/SpBowerBundle/contributors"
+                }
+            ],
+            "description": "Handle asset dependencies with bower",
+            "keywords": [
+                "asset",
+                "bower",
+                "bower manager",
+                "dependencies"
+            ],
+            "time": "2013-06-20 21:40:06"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -2035,19 +2109,16 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-<<<<<<< HEAD
-        "sp/bower-bundle": 20,
-        "jms/twig-js-bundle": 20,
-        "jms/twig-js": 20
-=======
         "friendsofsymfony/user-bundle": 20,
         "jms/security-extra-bundle": 20,
+        "jms/twig-js": 20,
+        "jms/twig-js-bundle": 20,
         "gedmo/doctrine-extensions": 20,
         "nelmio/alice": 20,
+        "sp/bower-bundle": 20,
         "stof/doctrine-extensions-bundle": 20,
         "doctrine/data-fixtures": 20,
         "doctrine/doctrine-fixtures-bundle": 20
->>>>>>> 1fc26baaf2922370d2563e14578c88b14fc39522
     },
     "platform": {
         "php": ">=5.3.3"
