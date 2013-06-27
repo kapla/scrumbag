@@ -10,5 +10,7 @@ web/bundles/*
 
 # Configuration files
 app/config/parameters.yml
+/nbproject/
 
+# Others files
 composer.phar
