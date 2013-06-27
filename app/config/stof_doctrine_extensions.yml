@@ -1,0 +1,16 @@
+stof_doctrine_extensions:
+    default_locale: fr
+    translation_fallback: false
+    orm:
+        default:
+            tree:           false
+            timestampable:  true
+            blameable:      false
+            sluggable:      true
+            translatable:   false
+            loggable:       false
+            softdeleteable: true
+            uploadable:     true
+
+    uploadable:
+        default_file_path: %kernel.root_dir%/../web/uploads
