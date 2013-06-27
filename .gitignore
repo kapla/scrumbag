@@ -14,4 +14,4 @@ app/config/parameters.yml
 
 composer.phar
 devreset.sh
-/src/*/*/Resources/public/component/*
+src/*/*/Resources/public/components/*
