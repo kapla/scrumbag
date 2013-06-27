@@ -14,13 +14,35 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">SrcumBag</a>
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
 
-        {% javascripts
-            "@jquery_js"
-            "@bootstrap_js" %}
-            <script src="{{ asset_url }}"></script>
-        {% endjavascripts %}
+                    <form class="navbar-form pull-right">
+                        <input type="text" class="search-query" placeholder="Filter">
+                    </form>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    coucou
+                </div>
+            </div>
+        {% endblock %}
+        {% block javascripts %}
+            {% javascripts
+                "@jquery_js"
+                "@bootstrap_js" %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
