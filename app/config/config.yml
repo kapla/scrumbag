@@ -7,5 +7,6 @@ imports:
     - { resource: doctrine.yml }
     - { resource: swiftmailer.yml }
     - { resource: fos_user.yml }
+    - { resource: jms_security_extra.yml }
     - { resource: sp_bower.yml }
     - { resource: stof_doctrine_extensions.yml }

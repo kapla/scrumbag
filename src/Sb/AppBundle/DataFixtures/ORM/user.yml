@@ -1,0 +1,8 @@
+Sb\AppBundle\Entity\User:
+    admin:
+        username:       admin
+        email (unique): admin@scrumbag.fr
+        plainPassword:  admin
+        roles:          [ROLE_ADMIN]
+        enabled:        true
+        locked:         false
