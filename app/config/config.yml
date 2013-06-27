@@ -6,3 +6,5 @@ imports:
     - { resource: assetic.yml }
     - { resource: doctrine.yml }
     - { resource: swiftmailer.yml }
+    - { resource: fos_user.yml }
+    - { resource: stof_doctrine_extensions.yml }
