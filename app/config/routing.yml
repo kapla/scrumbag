@@ -1,0 +1,4 @@
+sb_app:
+    resource: "@SbAppBundle/Controller"
+    type:     annotation
+    prefix:   /
