@@ -13,3 +13,5 @@ app/config/parameters.yml
 /nbproject/
 
 composer.phar
+devreset.sh
+/src/*/*/Resources/public/component/*
