@@ -1,0 +1,4 @@
+scrumbag
+========
+
+Scrum managment project
