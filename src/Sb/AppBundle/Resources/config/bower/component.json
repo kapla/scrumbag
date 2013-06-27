@@ -1,0 +1,7 @@
+{
+    "name": "ScrumBag",
+    "dependencies": {
+        "jquery":    "~1.10.1",
+        "bootstrap": "latest"
+    }
+}

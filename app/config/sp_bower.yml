@@ -1,0 +1,11 @@
+sp_bower:
+    install_on_warmup: true
+    bundles:
+        SbAppBundle: ~
+    assetic:
+        enabled: true
+        filters:
+            css:
+                - cssrewrite
+            js:
+                - ?uglifyjs
