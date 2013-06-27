@@ -19,7 +19,9 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
-        "sp/bower-bundle": "0.8.*@dev"
+        "sp/bower-bundle": "0.8.*@dev",
+        "jms/twig-js-bundle" : "dev-master",
+        "jms/twig-js" : "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

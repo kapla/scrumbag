@@ -1,5 +1,6 @@
 sp_bower:
     install_on_warmup: true
+    bin: %bower_path%
     bundles:
         SbAppBundle: ~
     assetic:

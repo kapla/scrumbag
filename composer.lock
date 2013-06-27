@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b48506ea037dc9d2d30c67a6dd790d4d",
+    "hash": "10e1f018a2ca7912a226065afe6902f3",
     "packages": [
         {
             "name": "doctrine/common",
@@ -376,6 +376,98 @@
                 "sql"
             ],
             "time": "2013-04-26 18:42:52"
+        },
+        {
+            "name": "jms/twig-js",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/twig.js.git",
+                "reference": "159542ed93a61801c1502497a65efbfd97628090"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/twig.js/zipball/159542ed93a61801c1502497a65efbfd97628090",
+                "reference": "159542ed93a61801c1502497a65efbfd97628090",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "twig/twig": ">=1.8,<2.0-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "TwigJs": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "twig.js, flexible, secure, and high-performance templating engine for Javascript",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-03-26 10:59:54"
+        },
+        {
+            "name": "jms/twig-js-bundle",
+            "version": "dev-master",
+            "target-dir": "JMS/TwigJsBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/schmittjoh/JMSTwigJsBundle.git",
+                "reference": "838b72b3ff11a351f00d5f4db4763f90e39f3631"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSTwigJsBundle/zipball/838b72b3ff11a351f00d5f4db4763f90e39f3631",
+                "reference": "838b72b3ff11a351f00d5f4db4763f90e39f3631",
+                "shasum": ""
+            },
+            "require": {
+                "jms/twig-js": "dev-master",
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.0,<3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "JMS\\TwigJsBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache2"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "http://jmsyst.com",
+                    "role": "Developer of wrapped JMSSerializerBundle"
+                }
+            ],
+            "description": "Integrates twig.js into your Symfony2 application",
+            "homepage": "http://jmsyst.com/bundles/JMSTwigJsBundle",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-06-12 08:45:22"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1235,7 +1327,9 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "sp/bower-bundle": 20
+        "sp/bower-bundle": 20,
+        "jms/twig-js-bundle": 20,
+        "jms/twig-js": 20
     },
     "platform": {
         "php": ">=5.3.3"

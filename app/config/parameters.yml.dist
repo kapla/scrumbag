@@ -13,3 +13,7 @@ parameters:
 
     locale:            fr
     secret:            5crumb4g!
+    bin_path:          /usr/local/bin
+    bower_path:        %bin_path%/bower
+    node_path:         %bin_path%/node
+    uglify_path:       %bin_path%/uglifyjs
