@@ -1,4 +1,15 @@
+* {
+    box-sizing:border-box;
+}
 
+@import "tools.less";
+@import "mixins.less";
+
+body
+{
+    background:url("/bundles/sbapp/img/linen.png") top center;
+    background-size:20% 20%;
+}
 
 .form-omnibar {
     width:500px;
@@ -10,3 +21,92 @@
         width:400px;
     }
 }
+
+.task-list {
+    padding:10px;
+    margin:0px;
+}
+
+.task {
+    width:23%;
+    margin:10px 1%;
+    padding:0px;
+    background:#ffffff;
+    border-radius: 4px;
+    display:inline-block;
+    border:1px solid #ccc;
+    list-style-type: none;
+    min-height:200px;
+
+    &.deleted {
+        -webkit-transform:scale(0, 0);
+        width:0px;
+        height:0px;
+        margin:0px;
+
+        &:before, &:after {
+            display:none;
+        }
+
+        -webkit-transition:-webkit-transform 0.2s ease-in, width 0.4s ease-in, margin 0.4s ease-in;
+    }
+
+
+    header {
+        height:30px;
+        .border-radius-top(4px);
+        .linear-gradient(#fff,15%);
+        border-bottom: 1px solid #ddd;
+        position: relative;
+
+        &:hover {
+            .delete-button {
+                display:inline-block;
+            }
+        }
+
+        .delete-button {
+            display:none;
+            position:absolute;
+            font-size:14px;
+            font-weight:100;
+            color:white;
+            background:RGBa(0, 0, 0, 0.3);
+            padding:7px 4px 10px 4px;
+            line-height:0px;
+            right:8px;
+            top:6px;
+            .border-radius(20px);
+
+            &:hover {
+                cursor:pointer;
+            }
+
+            &:active {
+                top:7px;
+            }
+
+
+        }
+
+        h3 {
+            font-size:14px;
+            font-weight:200;
+            padding:0px 7px 0px 7px;
+            margin:0px;
+            line-height:30px;
+
+            &:first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .content {
+        padding:7px;
+    }
+}
+
+
+
+

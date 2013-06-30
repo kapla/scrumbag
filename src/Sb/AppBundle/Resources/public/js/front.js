@@ -23,17 +23,42 @@ function SprintController($scope, $filter) {
         {
             id: 0,
             title: "exemple task 1",
-            description: "description"
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
         },
         {
             id: 2,
             title: "test task 1",
-            description: "description"
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
         },
         {
             id: 3,
             title: "mook task 1",
-            description: "description"
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
+        },
+        {
+            id: 4,
+            title: "mook task 1",
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
+        },
+        {
+            id: 5,
+            title: "mook task 1 sprint",
+            description: "description",
+            position: "sprint1",
+            duration: 4,
+            status: ''
         }
     ];
 
@@ -51,6 +76,10 @@ function SprintController($scope, $filter) {
         if ($scope.omnibar.status == 'create') {
 
         }
+    };
+
+    $scope.deleteTask = function(task) {
+        task.status = 'deleted';
     };
 }
 

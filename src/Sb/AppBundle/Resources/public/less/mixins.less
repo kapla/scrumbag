@@ -1,0 +1,144 @@
+
+.border-radius(@radius : 5px)
+{
+    -webkit-border-radius:@radius;
+    -moz-border-radius:@radius;
+    -o-border-radius:@radius;
+    border-radius:@radius;
+}
+
+
+/*
+ * Fonction de dégradé linéaire.
+ * @param color : Couleur principale du dégradé (couleur centrale)
+ * @param strength : force du dégradé (en pourcentage)
+ */
+.linear-gradient(@color: #555555, @strength: 10%)
+{
+    @color-top: hsl(hue(@color), saturation(@color) + ( @strength / 4 ), lightness(@color) + ( @strength / 2 )); //Couleur haute plus claire
+    @color-bottom: hsl(hue(@color), saturation(@color) + ( @strength / 4 ), lightness(@color) - ( @strength / 2 ) ); //Couleur haute plus claire
+
+    .linear-gradient-alt(@color-top, @color-bottom);
+    background-color : @color;
+}
+
+/*
+ * Fonction de dégradé linéaire.
+ * @param color : Couleur principale du dégradé (couleur centrale)
+ * @param strength : force du dégradé (en pourcentage)
+ */
+.linear-gradient-inv(@color: #555555, @strength: 10%)
+{
+    @color-top: hsl(hue(@color), saturation(@color) + ( @strength / 4 ), lightness(@color) + ( @strength / 2 )); //Couleur haute plus claire
+    @color-bottom: hsl(hue(@color), saturation(@color) + ( @strength / 4 ), lightness(@color) - ( @strength / 2 ) ); //Couleur haute plus claire
+
+    .linear-gradient-alt(@color-bottom,@color-top);
+    background-color : @color;
+}
+
+/*
+ * Fonction de dégradé linéaire alternative.
+ * @param from : couleur du haut du dégradé
+ * @param to : couleur du bas de dégradé
+ */
+.linear-gradient-alt(@from, @to)
+{
+    background-color : @from;
+    background-image : -webkit-gradient(linear, left top, left bottom, from(@from), to(@to));
+    background-image : -moz-linear-gradient(@from, @to);
+    background-image : -o-linear-gradient(@from, @to);
+    background-image : linear-gradient(@from, @to);
+}
+
+
+
+/*
+ * Fonction de dégradé radial.
+ * @param from : couleur centrale du dégradé
+ * @param to : couleur externe du dégradé
+ * @param size : taille du dégradé
+ * @param top : centre du dégradé (top)
+ * @param left : centre du dégradé (left)
+ */
+.radial-gradient(@from : #000000, @to : #ffffff, @size : 100px, @top : 50px, @left : 50px)
+{
+    background-color: @from;
+    background-image: -webkit-gradient(radial, @left @top, 0, @left @top, @size, from(@from), to(@to));
+    background-image: -moz-radial-gradient(@top @left 90deg,circle closest-corner, @from, @to);
+    background-image: radial-gradient(@top @left 90deg,circle closest-corner, @from, @to);
+}
+
+/*
+ * Fonction d'ombre portée simple.
+ * @param left : position left
+ * @param top : position top
+ * @param size : taille du dégradé
+ * @param color : couleur du dégradé
+ * @param magnification : grossissement du dégradé
+ */
+.box-shadow(@color : #000000, @left : 0px, @top : 0px, @size : 10px, @magnification : 0px)
+{
+    -webkit-box-shadow: @left @top @size @magnification @color;
+    -moz-box-shadow: @left @top @size @magnification @color;
+    -o-box-shadow: @left @top @size @magnification @color;
+    box-shadow: @left @top @size @magnification @color;
+}
+
+/*
+ * Fonction d'ombre portée sur le bas ed la div (comme un bas de feuille relevée)
+ * @param color : Couleur du dégradé (noir à 80% d'opacité par défaut)
+ */
+.bottom-shadow(@color : RGBa(0,0,0,0.8))
+{
+    .box-shadow(@color, 0px, 10px, 10px, -10px);
+}
+
+/*
+ * Fonction créant un effet glossy pour les boutons de l'interface
+ * @param color : Couleur de base du bouton
+ * @param radius : radius des coins arrondis
+ */
+.glossy-button(@color, @radius : 4px)
+{
+    @border-color : hsl(hue(@color),93%, 47%); //#111b4b
+    @gloss-color : hsl(hue(@color), 92%, 56%); //#02152b
+
+    background-color : @color;
+    .border-radius(@radius);
+    border: solid 1px @border-color;
+    background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(@color), to(@color), color-stop(.50,@color),color-stop(.51,@gloss-color));
+    background-image : -moz-linear-gradient(top,@color 0%, @color 50%, @gloss-color 51%, @color 100%);
+    background-image : linear-gradient(@color 0%, @color 50%, @gloss-color 51%, @color 50%);
+}
+
+.grey-gradient(@strength : 0.2)
+{
+    .linear-gradient-alt(RGBa(0,0,0,@strength), RGBa(0,0,0,0));
+}
+
+.box-sizing()
+{
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.border-radius-top(@radius : 3px)
+{
+    .border-radius-ext(@radius @radius 0px 0px);
+}
+
+.border-radius-bottom(@radius : 3px)
+{
+    .border-radius-ext(0px 0px @radius @radius);
+}
+
+.border-radius-ext(@radius : 3px 3px 3px 3px)
+{
+    -webkit-border-radius:@radius;
+    -moz-border-radius:@radius;
+    -o-border-radius:@radius;
+    -ms-border-radius:@radius;
+    border-radius:@radius;
+}

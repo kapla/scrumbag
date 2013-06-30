@@ -7,12 +7,28 @@
             <form class="form-search form-omnibar" ng-submit="omnibarSubmit()">
                 <div class="input-append">
                     <input type="text" class="span12 search-query" ng-model="omnibar.value" ng-change="onmibarChange()">
-                    <button type="submit" class="btn">{[{ omnibar.type }]}</button>
+                    <button type="submit" class="btn ng-cloak">{[{ omnibar.type }]}</button>
                 </div>
             </form>
 
-            <ul>
-                <li ng-repeat="task in tasks | filter:omnibar.value">
+            <h2>Backlog</h2>
+            <ul class="backlog task-list">
+                <li ng-repeat="task in tasks | filter:{$:omnibar.value, position:'backlog'}" class="ng-cloak task" ng-class="task.status">
+                    <header>
+                        <h3>{[{ task.title }]}</h3>
+                        <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
+                    </header>
+                    <div class="content">
+                        {[{ task.description }]}
+                    </div>
+                    <footer>
+                        {[{ task.duration }]}
+                    </footer>
+                </li>
+            </ul>
+
+            <ul class="task-list">
+                <li class="ng-cloak paper-shadow" ng-repeat="task in tasks | filter:{$:omnibar.value, position:'sprint'}">
                     {[{ task.id }]} : {[{ task.title }]} : {[{ task.description }]}
                 </li>
             </ul>
