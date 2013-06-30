@@ -17,3 +17,5 @@ app/config/parameters.yml
 
 composer.phar
 src/*/*/Resources/public/components/*
+
+npm-debug.log

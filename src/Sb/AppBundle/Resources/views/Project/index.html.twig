@@ -1,1 +1,22 @@
-Hello
+{% extends '::base.html.twig' %}
+
+{% block container %}
+<div class="container-fluid" ng-controller="SprintController">
+    <div class="row-fluid">
+        <div class="span12">
+            <form class="form-search form-omnibar" ng-submit="omnibarSubmit()">
+                <div class="input-append">
+                    <input type="text" class="span12 search-query" ng-model="omnibar.value" ng-change="onmibarChange()">
+                    <button type="submit" class="btn">{[{ omnibar.type }]}</button>
+                </div>
+            </form>
+
+            <ul>
+                <li ng-repeat="task in tasks | filter:omnibar.value">
+                    {[{ task.id }]} : {[{ task.title }]} : {[{ task.description }]}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock container %}
