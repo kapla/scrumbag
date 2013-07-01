@@ -25,18 +25,19 @@ body
 }
 
 .task-list {
+    width:100%;
     padding:10px;
     margin:0px;
 }
 
 .task {
     width:23%;
+    height:300px;
     margin:10px 1%;
-    padding:0px;
-    background:#ffffff;
-    border-radius: 4px;
+
+    -webkit-perspective: 1000;
+
     display:inline-block;
-    border:1px solid #ccc;
     list-style-type: none;
     min-height:200px;
 
@@ -50,62 +51,122 @@ body
             display:none;
         }
 
-        -webkit-transition:-webkit-transform 0.2s ease-in, width 0.4s ease-in, margin 0.4s ease-in;
+        -webkit-transition: width 0.4s ease-in, margin 0.4s ease-in;
     }
 
+    -webkit-transition: -webkit-transform 0.2s ease-in, width 0.5s ease-in-out, margin 0.5s ease-in-out;
 
-    header {
-        height:30px;
-        .border-radius-top(4px);
-        .linear-gradient(#fff,15%);
-        border-bottom: 1px solid #ddd;
-        position: relative;
+    &.not-visible {
+        -webkit-transform: translate(3000px, 0px) scale(0,0);
+        width:0px;
+        margin:0px;
+        height:0px;
+        -webkit-transition: -webkit-transform 0.5s ease-in, width 0.5s ease-in-out, height 0.5s ease-in-out, margin 0.5s ease-in-out;
+    }
 
-        &:hover {
-            .delete-button {
-                display:inline-block;
+    &.visible {
+        //-webkit-transition-delay: 1s;
+    }
+
+    &.visible.single {
+        width:50%;
+        position:relative;
+        margin:0px 25%;
+
+        .container {
+            -webkit-transform: rotateY(180deg);
+        }
+
+        .front {
+            z-index: 0;
+        }
+    }
+
+    .container {
+        width: 324px; height: 412px;
+        width:100%;
+        height:100%;
+
+        -webkit-transform-style: preserve-3d;
+        -webkit-transition: 0.5s;
+
+        .face {
+            position: absolute;
+            top:0px;
+            bottom:0px;
+            left:0px;
+            right:0px;
+
+            -webkit-backface-visibility: hidden;
+
+            &.front {
+                background:white;
+                z-index: 10;
+            }
+
+            &.back {
+                background:white;
+                -webkit-transform: rotateY(180deg);
             }
         }
 
-        .delete-button {
-            display:none;
-            position:absolute;
-            font-size:14px;
-            font-weight:100;
-            color:white;
-            background:RGBa(0, 0, 0, 0.3);
-            padding:7px 4px 10px 4px;
-            line-height:0px;
-            right:8px;
-            top:6px;
-            .border-radius(20px);
+        header {
+            height:30px;
+            .border-radius-top(4px);
+            .linear-gradient(#fff,15%);
+            border-bottom: 1px solid #ddd;
+            position: relative;
 
             &:hover {
-                cursor:pointer;
+                .delete-button {
+                    display:inline-block;
+                }
             }
 
-            &:active {
-                top:7px;
+            .delete-button {
+                display:none;
+                position:absolute;
+                font-size:14px;
+                font-weight:100;
+                color:white;
+                background:RGBa(0, 0, 0, 0.3);
+                padding:7px 4px 10px 4px;
+                line-height:0px;
+                right:8px;
+                top:6px;
+                .border-radius(20px);
+
+                &:hover {
+                    cursor:pointer;
+                }
+
+                &:active {
+                    top:7px;
+                }
+
+
             }
 
+            h3 {
+                font-size:14px;
+                font-weight:200;
+                padding:0px 7px 0px 7px;
+                margin:0px;
+                line-height:30px;
 
+                &:hover {
+                    cursor:pointer;
+                }
+
+                &:first-letter {
+                    text-transform: uppercase;
+                }
+            }
         }
 
-        h3 {
-            font-size:14px;
-            font-weight:200;
-            padding:0px 7px 0px 7px;
-            margin:0px;
-            line-height:30px;
-
-            &:first-letter {
-                text-transform: uppercase;
-            }
+        .content {
+            padding:7px;
         }
-    }
-
-    .content {
-        padding:7px;
     }
 }
 

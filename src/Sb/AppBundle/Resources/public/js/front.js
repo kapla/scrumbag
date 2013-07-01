@@ -30,7 +30,6 @@ function SprintController($scope, $element, $filter) {
 
     $scope.tasks = [
         {
-            id: 0,
             title: "exemple task 1",
             description: "description",
             position: "backlog",
@@ -38,7 +37,27 @@ function SprintController($scope, $element, $filter) {
             status: ''
         },
         {
-            id: 2,
+            title: "aefez task 1",
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
+        },
+        {
+            title: "efcz task 1",
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
+        },
+        {
+            title: "exaefeafzemple task 1",
+            description: "description",
+            position: "backlog",
+            duration: 4,
+            status: ''
+        },
+        {
             title: "test task 1",
             description: "description",
             position: "backlog",
@@ -46,7 +65,6 @@ function SprintController($scope, $element, $filter) {
             status: ''
         },
         {
-            id: 3,
             title: "mook task 1",
             description: "description",
             position: "backlog",
@@ -54,7 +72,6 @@ function SprintController($scope, $element, $filter) {
             status: ''
         },
         {
-            id: 4,
             title: "mook task 1",
             description: "description",
             position: "backlog",
@@ -62,7 +79,6 @@ function SprintController($scope, $element, $filter) {
             status: ''
         },
         {
-            id: 5,
             title: "mook task 1 sprint",
             description: "description",
             position: "sprint1",
@@ -70,6 +86,15 @@ function SprintController($scope, $element, $filter) {
             status: ''
         }
     ];
+
+    $scope.actors = ['administrator'];
+
+    $scope.userStories = {
+        1 : {
+            actor: $scope.actors[0],
+            goal: 'I want to do...'
+        }
+    };
 
     $scope.onmibarChange = function() {
         if ($filter('filter')($scope.tasks, $scope.omnibar.value).length) {
