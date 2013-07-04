@@ -1,8 +1,10 @@
 {
     "name": "ScrumBag",
     "dependencies": {
-        "jquery":         "~1.8.1",
-        "bootstrap":      "latest",
-        "angular":        "latest"
+        "jquery"           : "~1.8.1",
+        "bootstrap"        : "latest",
+        "angular"          : "latest",
+        "angular-ui-utils" : "latest",
+        "toastr"           : "latest"
     }
 }

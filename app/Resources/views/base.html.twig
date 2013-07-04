@@ -7,6 +7,7 @@
         {% block stylesheets %}
             {% stylesheets filter="less"
                 "@bootstrap_css"
+                "@toastr_css"
                 "@SbAppBundle/Resources/public/less/front.less" %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
@@ -41,8 +42,11 @@
         {% endblock %}
         {% block javascripts %}
             {% javascripts
+                "@jquery_js"
                 "@angular_js"
-                "@bootstrap_js"
+                "@toastr_js"
+                "@SbAppBundle/Resources/public/components/angular-ui-utils/modules/keypress/keypress.js"
+                "@SbAppBundle/Resources/public/js/tools.js"
                 "@SbAppBundle/Resources/public/js/front.js" %}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
