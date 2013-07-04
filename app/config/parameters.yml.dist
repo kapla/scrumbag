@@ -1,20 +1,22 @@
 parameters:
-    database_driver:   pdo_mysql
-    database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     scrumbag
-    database_user:     scrumbag
-    database_password: scrumbag
+    database_driver:        pdo_mysql
+    database_host:          127.0.0.1
+    database_port:          ~
+    database_name:          scrumbag
+    database_user:          scrumbag
+    database_password:      scrumbag
 
-    mailer_transport:  smtp
-    mailer_host:       127.0.0.1
-    mailer_user:       ~
-    mailer_password:   ~
+    mailer_transport:       smtp
+    mailer_host:            127.0.0.1
+    mailer_user:            ~
+    mailer_password:        ~
 
-    locale:            fr
-    secret:            5crumb4g!
-    bin_path:          /usr/local/bin
-    bower_path:        %bin_path%/bower
-    node_path:         %bin_path%/node
-    node_paths: ['/usr/local/lib/node_modules']
-    uglify_path:       %bin_path%/uglifyjs
+    assetic.use_controller: true
+
+    locale:                 fr
+    secret:                 5crumb4g!
+    bin_path:               /usr/local/bin
+    bower_path:             %bin_path%/bower
+    node_path:              %bin_path%/node
+    node_paths:             ['/usr/local/lib/node_modules', /usr/local/share/npm/lib/node_modules]
+    uglify_path:            %bin_path%/uglifyjs
