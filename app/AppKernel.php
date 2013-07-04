@@ -17,10 +17,12 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
+            new FOS\RestBundle\FOSRestBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\AopBundle\JMSAopBundle(),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
             new Sp\BowerBundle\SpBowerBundle(),
             new Sb\AppBundle\SbAppBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
