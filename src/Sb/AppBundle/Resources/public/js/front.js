@@ -72,7 +72,7 @@ function SprintController($scope, $element, $filter) {
             status: ''
         },
         {
-            title: "mook task 1",
+            title: "mook last task 1",
             description: "description",
             position: "backlog",
             duration: 4,

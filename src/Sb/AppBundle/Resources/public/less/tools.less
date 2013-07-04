@@ -1,8 +1,10 @@
-.paper-shadow
+.paper-shadow()
 {
     position: relative;
 
     &:before, &:after {
+        -webkit-transition: opacity 0.5s ease-in;
+        opacity:1;
         z-index: -1;
         position: absolute;
         content: "";
@@ -11,7 +13,7 @@
         width: 50%;
         top: 80%;
         max-width:300px;
-        background: #777;
+        background: transparent;
         -webkit-box-shadow: 0 15px 10px #777;
         -moz-box-shadow: 0 15px 10px #777;
         box-shadow: 0 15px 10px #777;

@@ -12,37 +12,39 @@
                 </div>
             </form>
 
-            <h2>Backlog</h2>
-            <ul class="backlog task-list">
-                <li ng-repeat="task in tasks | filter:{position:'backlog'}" class="ng-cloak task" ng-class="task.status + ' ' + (((tasks | filter:{$:omnibar.value}).length == 1) && 'single' || '') + ' ' + ((([task] | filter:{$:omnibar.value}).length) && 'visible' || 'not-visible')">
-                    <div class="container">
-                        <div class="front face">
-                            <header>
-                                <h3 ng-click="omnibar.value = task.title">{[{ task.title }]}</h3>
-                                <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
-                            </header>
-                            <div class="content">
-                                {[{ task.description }]}
+            <div class="status-zone">
+                <h2>Backlog</h2>
+                <ul class="backlog task-list">
+                    <li ng-repeat="task in tasks | filter:{position:'backlog'}" class="ng-cloak task" ng-class="task.status + ' ' + (((tasks | filter:{$:omnibar.value}).length == 1) && 'single' || 'not-single') + ' ' + ((([task] | filter:{$:omnibar.value}).length) && 'visible' || 'not-visible')">
+                        <div class="container">
+                            <div class="front face">
+                                <header>
+                                    <h3 ng-click="omnibar.value = task.title">{[{ task.title }]}</h3>
+                                    <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
+                                </header>
+                                <div class="content">
+                                    {[{ task.description }]}
+                                </div>
+                                <footer>
+                                    {[{ task.duration }]}
+                                </footer>
                             </div>
-                            <footer>
-                                {[{ task.duration }]}
-                            </footer>
-                        </div>
-                        <div class="back face">
-                            <header>
-                                <h3 >{[{ task.title }]}</h3>
-                                <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
-                            </header>
-                            <div class="content">
-                                EDIT
+                            <div class="back face">
+                                <header>
+                                    <h3 >{[{ task.title }]}</h3>
+                                    <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
+                                </header>
+                                <div class="content">
+                                    EDIT
+                                </div>
+                                <footer>
+                                    {[{ task.duration }]}
+                                </footer>
                             </div>
-                            <footer>
-                                {[{ task.duration }]}
-                            </footer>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
 
             <h2>Sprint</h2>
             <ul class="task-list">
