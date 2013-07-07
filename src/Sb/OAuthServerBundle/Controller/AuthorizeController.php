@@ -8,6 +8,7 @@ use Sb\OAuthServerBundle\Form\Model\Authorize;
 use Sb\OAuthServerBundle\Entity\Client;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+
 class AuthorizeController extends BaseAuthorizeController
 {
     public function authorizeAction(Request $request)
