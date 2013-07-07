@@ -17,8 +17,6 @@ use FOS\RestBundle\Controller\Annotations\QueryParam;
 
 /**
  * Product controller
- *
- * @Route("/products")
  */
 class ProductController extends FOSRestController
 {
