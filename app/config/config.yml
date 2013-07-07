@@ -6,6 +6,7 @@ imports:
     - { resource: assetic.yml }
     - { resource: doctrine.yml }
     - { resource: swiftmailer.yml }
+    - { resource: fos_oauth_server.yml }
     - { resource: fos_user.yml }
     - { resource: jms_security_extra.yml }
     - { resource: sp_bower.yml }
