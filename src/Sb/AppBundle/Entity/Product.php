@@ -19,7 +19,7 @@ class Product
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Serializer\Groups({"product_all"})
+     * @Serializer\Groups({"list"})
      */
     protected $id;
 
@@ -28,7 +28,7 @@ class Product
      *
      * @Assert\Length(max="255")
      * @Assert\NotBlank(groups={"New", "Edit"})
-     * @Serializer\Groups({"product_all"})
+     * @Serializer\Groups({"list"})
      */
     protected $name;
 
@@ -37,7 +37,7 @@ class Product
      *
      * @Assert\Length(max="255")
      * @Assert\NotBlank(groups={"New", "Edit"})
-     * @Serializer\Groups({"product_all"})
+     * @Serializer\Groups({"list"})
      */
     protected $description;
 
@@ -53,7 +53,7 @@ class Product
      * @ORM\Column(name="created_at", type="datetime", nullable=false)
      *
      * @Gedmo\Timestampable(on="create")
-     * @Serializer\Groups({"product_all"})
+     * @Serializer\Groups({"list"})
      */
     protected $createdAt;
 
@@ -61,7 +61,7 @@ class Product
      * @ORM\Column(name="updated_at", type="datetime", nullable=false)
      *
      * @Gedmo\Timestampable
-     * @Serializer\Groups({"product_all"})
+     * @Serializer\Groups({"list"})
      */
     protected $updatedAt;
 

@@ -1,0 +1,9 @@
+products:
+    type:     rest
+    resource: Sb\AppBundle\Controller\ProductController
+
+# tasks:
+#     type:        rest
+#     parent:      products
+#     resource:    Sb\AppBundle\Controller\TaskController
+#     name_prefix: api_

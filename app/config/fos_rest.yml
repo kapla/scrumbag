@@ -9,3 +9,11 @@ fos_rest:
             json: true
             rss: true
             xml: true
+        default_engine: json
+    service:
+        serializer: jms_serializer.serializer
+    serializer:
+        version:        ~
+        groups:         ['list', 'details']
+        serialize_null: false
+    param_fetcher_listener: force

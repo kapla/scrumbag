@@ -2,7 +2,9 @@
 
 namespace Sb\AppBundle\Controller;
 
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -11,46 +13,83 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 
 use Sb\AppBundle\Entity\Product;
 
-use JMS\Serializer\SerializationContext;
-use Symfony\Component\HttpFoundation\AcceptHeader;
+use FOS\RestBundle\Controller\Annotations\QueryParam;
 
 /**
  * Product controller
  *
  * @Route("/products")
  */
-class ProductController extends BaseController
+class ProductController extends FOSRestController
 {
     /**
      * List all products
      *
-     * @Route("/", name="product_all", defaults={"_format" = "~"})
-     * @Method({"GET"})
-     * @Rest\View
+     * @QueryParam(
+     *     name="count",
+     *     requirements="[1-9]|[1-9][0-9]|[1][0-9][0-9]|200",
+     *     strict=true,
+     *     default="50",
+     *     nullable=true,
+     *     description="Item count limit (default value : 50)"
+     * )
+     * @QueryParam(
+     *     name="since_id",
+     *     requirements="\d+",
+     *     strict=true,
+     *     nullable=true,
+     *     description="Fetch only products newer than since_id"
+     * )
+     * @QueryParam(
+     *     name="max_id",
+     *     requirements="\d+",
+     *     strict=true,
+     *     nullable=true,
+     *     description="Fetch only products older than max_id"
+     * )
+     *
+     * @Rest\View(serializerGroups={"list"})
+     *
+     * @param Request $request
      */
-    public function allAction(Request $request)
+    public function getProductsAction(Request $request, $count, $since_id, $max_id)
     {
-        $em       = $this->getDoctrine()->getManager();
-        $products = $em->getRepository('SbAppBundle:Product')->findAll();
+        //Need a fix
+        $sinceId = $since_id;
+        $maxId = $max_id;
 
-        $serializer = $this->container->get('jms_serializer');
-        $data = $serializer->serialize(
-            $products,
-            'json',
-            SerializationContext::create()->setGroups(array('product_all'))
+        $em = $this->getDoctrine()->getManager();
+        $qb = $em->getRepository('SbAppBundle:Product')
+            ->createQueryBuilder('p');
+
+        $qb->setMaxResults($count);
+
+        if ($sinceId) {
+            $qb->andWhere('p.id >= :sinceId');
+            $qb->setParameter(':sinceId', $sinceId);
+        }
+
+        if ($maxId) {
+            $qb->andWhere('p.id <= :maxId');
+            $qb->setParameter(':maxId', $maxId);
+        }
+
+        $products = $qb->getQuery()->getResult();
+
+        return array(
+            'products' => $products,
+            'count'    => $count,
+            'sinceId'  => $sinceId,
+            'maxId'    => $max_id
         );
-
-        return array('products' => $data);
     }
 
     /**
      * Get a product
      *
-     * @Route("/get/{id}", name="product_get", defaults={"_format" = "~"})
-     * @Method({"GET"})
-     * @Rest\View()
+     * @Rest\View(serializerGroups={"details"})
      */
-    public function getAction($id)
+    public function getProductAction($id)
     {
         $em      = $this->getDoctrine()->getManager();
         $product = $em->getRepository('SbAppBundle:Product')->find($id);
