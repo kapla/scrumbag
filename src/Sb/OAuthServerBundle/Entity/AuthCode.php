@@ -1,16 +1,16 @@
 <?php
-// src/Sb/AppBundle/Entity/AccessToken.php
+// src/Sb/OAuthServerBundle/Entity/AuthCode.php
 
-namespace Sb\AppBundle\Entity\OAuth;
+namespace Sb\OAuthServerBundle\Entity;
 
-use FOS\OAuthServerBundle\Entity\AccessToken as BaseAccessToken;
+use FOS\OAuthServerBundle\Entity\AuthCode as BaseAuthCode;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="access_token")
+ * @ORM\Table(name="auth_code")
  */
-class AccessToken extends BaseAccessToken
+class AuthCode extends BaseAuthCode
 {
     /**
      * @ORM\Id

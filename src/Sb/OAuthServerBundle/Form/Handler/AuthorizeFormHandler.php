@@ -30,17 +30,20 @@ class AuthorizeFormHandler
 
         if ($this->request->getMethod() == 'POST') {
 
-            $this->form->bindRequest($this->request);
+            $this->form->bind($this->request);
 
             if ($this->form->isValid()) {
+                if ($this->context->isGranted('IS_AUTHENTICATED_FULLY')) {
+                    try {
+                        $user = $this->context->getToken()->getUser();
 
-                try {
-                    $user = $this->context->getToken()->getUser();
-                    return $this->oauth2->finishClientAuthorization(true, $user, $this->request, null);
-                } catch (OAuth2ServerException $e) {
-                    return $e->getHttpResponse();
+                        return $this->oauth2->finishClientAuthorization(true, $user, $this->request, null);
+                    } catch (OAuth2ServerException $e) {
+                        return $e->getHttpResponse();
+                    }
+                } else {
+                    return false;
                 }
-
             }
 
         }
