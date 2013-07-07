@@ -6,6 +6,19 @@ Sb\AppBundle\Entity\User:
         roles:          [ROLE_ADMIN]
         enabled:        true
         locked:         false
+    user{0...10}:
+        username:       user<current()>
+        email (unique): user<current()>@scrumbag.fr
+        plainPassword:  test
+        roles:          [ROLE_USER]
+        enabled:        true
+        locked:         false
+
+Sb\AppBundle\Entity\Product:
+    product{1...100}:
+        name:        <catchPhrase()>
+        description: <sentence()>
+        scrumMaster: @user*
 
 Sb\OAuthServerBundle\Entity\Client:
     ScrumBagClient:

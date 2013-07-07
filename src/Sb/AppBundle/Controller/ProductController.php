@@ -2,12 +2,17 @@
 
 namespace Sb\AppBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use JMS\SecurityExtraBundle\Annotation\PreAuthorize;
 use FOS\RestBundle\Controller\Annotations as Rest;
+
 use Sb\AppBundle\Entity\Product;
+
+use JMS\Serializer\SerializationContext;
+use Symfony\Component\HttpFoundation\AcceptHeader;
 
 /**
  * Product controller
@@ -23,25 +28,21 @@ class ProductController extends BaseController
      * @Method({"GET"})
      * @Rest\View
      */
-    public function allAction()
+    public function allAction(Request $request)
     {
         $em       = $this->getDoctrine()->getManager();
-
-        $user = $this->get('security.context')->getToken()->getUser();
-
-        error_log($user->getId());
-
-        $product = new Product();
-        $product->setName('Test');
-        $product->setDescription('description');
-        $product->setScrumMaster($user);
-        $em->persist($product);
-        $em->flush();
-
-
         $products = $em->getRepository('SbAppBundle:Product')->findAll();
 
-        return array('products' => $products);
+        error_log(AcceptHeader::fromString($request->headers->get('Accept')));
+
+        $serializer = $this->container->get('jms_serializer');
+        $data = $serializer->serialize(
+            $products,
+            'json',
+            SerializationContext::create()->setGroups(array('product_all'))
+        );
+
+        return array('products' => $data);
     }
 
     /**

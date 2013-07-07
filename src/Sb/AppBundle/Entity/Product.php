@@ -5,6 +5,7 @@ namespace Sb\AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
+use JMS\Serializer\Annotation as Serializer;
 
 /**
  * Product
@@ -18,6 +19,7 @@ class Product
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"product_all"})
      */
     protected $id;
 
@@ -26,6 +28,7 @@ class Product
      *
      * @Assert\Length(max="255")
      * @Assert\NotBlank(groups={"New", "Edit"})
+     * @Serializer\Groups({"product_all"})
      */
     protected $name;
 
@@ -34,6 +37,7 @@ class Product
      *
      * @Assert\Length(max="255")
      * @Assert\NotBlank(groups={"New", "Edit"})
+     * @Serializer\Groups({"product_all"})
      */
     protected $description;
 
@@ -49,6 +53,7 @@ class Product
      * @ORM\Column(name="created_at", type="datetime", nullable=false)
      *
      * @Gedmo\Timestampable(on="create")
+     * @Serializer\Groups({"product_all"})
      */
     protected $createdAt;
 
@@ -56,13 +61,14 @@ class Product
      * @ORM\Column(name="updated_at", type="datetime", nullable=false)
      *
      * @Gedmo\Timestampable
+     * @Serializer\Groups({"product_all"})
      */
     protected $updatedAt;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -78,14 +84,14 @@ class Product
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -101,14 +107,14 @@ class Product
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -124,14 +130,14 @@ class Product
     public function setCreatedAt($createdAt)
     {
         $this->createdAt = $createdAt;
-    
+
         return $this;
     }
 
     /**
      * Get createdAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -147,14 +153,14 @@ class Product
     public function setUpdatedAt($updatedAt)
     {
         $this->updatedAt = $updatedAt;
-    
+
         return $this;
     }
 
     /**
      * Get updatedAt
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -170,14 +176,14 @@ class Product
     public function setScrumMaster(\Sb\AppBundle\Entity\User $scrumMaster)
     {
         $this->scrumMaster = $scrumMaster;
-    
+
         return $this;
     }
 
     /**
      * Get scrumMaster
      *
-     * @return \Sb\AppBundle\Entity\User 
+     * @return \Sb\AppBundle\Entity\User
      */
     public function getScrumMaster()
     {
