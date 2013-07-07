@@ -10,8 +10,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Task
  *
  * @ORM\Table(name="task")
- * @ORM\Entity(repositoryClass="Sb\AppBundle\Repository\TaskRepository")
+ * @ORM\Entity(repositoryClass="Sb\AppBundle\Entity\Repository\TaskRepository")
  */
-class Task extends ScrumNode
+class Task
 {
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
 }
