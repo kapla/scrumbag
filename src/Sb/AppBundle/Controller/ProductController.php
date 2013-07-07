@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use JMS\SecurityExtraBundle\Annotation\PreAuthorize;
 use FOS\RestBundle\Controller\Annotations as Rest;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use Sb\AppBundle\Entity\Product;
 
@@ -34,16 +35,20 @@ class ProductController extends FOSRestController
      * @QueryParam(
      *     name="since_id",
      *     requirements="\d+",
-     *     strict=true,
+     *     default="0",
      *     nullable=true,
      *     description="Fetch only products newer than since_id"
      * )
      * @QueryParam(
      *     name="max_id",
      *     requirements="\d+",
-     *     strict=true,
      *     nullable=true,
      *     description="Fetch only products older than max_id"
+     * )
+     *
+     * @ApiDoc(
+     *     resource=true,
+     *     description="Retrieve a list of projects from the authenticated user"
      * )
      *
      * @Rest\View(serializerGroups={"list"})
@@ -84,6 +89,11 @@ class ProductController extends FOSRestController
 
     /**
      * Get a product
+     *
+     * @ApiDoc(
+     *     resource=true,
+     *     description="Retrieve a project"
+     * )
      *
      * @Rest\View(serializerGroups={"details"})
      */

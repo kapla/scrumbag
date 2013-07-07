@@ -32,3 +32,7 @@ fos_oauth_server_authorize:
 sb_oauth_server_security:
     resource: "@SbOAuthServerBundle/Resources/config/routing/security.xml"
     prefix: /
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

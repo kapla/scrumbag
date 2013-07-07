@@ -12,3 +12,4 @@ imports:
     - { resource: jms_security_extra.yml }
     - { resource: sp_bower.yml }
     - { resource: stof_doctrine_extensions.yml }
+    - { resource: nelmio_api_doc.yml }
