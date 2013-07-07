@@ -29,6 +29,7 @@
         "jms/twig-js-bundle":                   "dev-master",
         "gedmo/doctrine-extensions":            "dev-master",
         "nelmio/alice":                         "dev-master",
+        "nelmio/api-doc-bundle":                "dev-master",
         "sp/bower-bundle":                      "0.8.*@dev",
         "stof/doctrine-extensions-bundle":      "dev-master"
     },

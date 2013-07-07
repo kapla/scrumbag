@@ -10,9 +10,8 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Sb\AppBundle\Entity\Product;
 
 /**
- * Project controller
+ * Product controller
  *
- * @PreAuthorize("isFullyAuthenticated()")
  * @Route("/products")
  */
 class ProductController extends BaseController

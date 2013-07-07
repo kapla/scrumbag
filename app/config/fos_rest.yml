@@ -7,5 +7,5 @@ fos_rest:
         view_response_listener: true
         formats:
             json: true
-            rss: false # removing them will also work
+            rss: true
             xml: true

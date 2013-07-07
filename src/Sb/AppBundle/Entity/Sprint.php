@@ -7,12 +7,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Product
+ * Sprint
  *
- * @ORM\Table(name="product")
- * @ORM\Entity(repositoryClass="Sb\AppBundle\Repository\ProductRepository")
+ * @ORM\Table(name="sprint")
+ * @ORM\Entity(repositoryClass="Sb\AppBundle\Repository\SprintRepository")
  */
-class Product
+class Sprint
 {
     /**
      * @ORM\Id
@@ -28,22 +28,6 @@ class Product
      * @Assert\NotBlank(groups={"New", "Edit"})
      */
     protected $name;
-
-    /**
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
-     *
-     * @Assert\Length(max="255")
-     * @Assert\NotBlank(groups={"New", "Edit"})
-     */
-    protected $description;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Sb\AppBundle\Entity\User", inversedBy="products")
-     * @ORM\JoinColumn(name="scrum_master_id", nullable=false)
-     *
-     * @Assert\NotBlank(groups={"New", "Edit"})
-     */
-    protected $scrumMaster;
 
     /**
      * @ORM\Column(name="created_at", type="datetime", nullable=false)

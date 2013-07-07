@@ -10,7 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * Task
  *
  * @ORM\Table(name="task")
- * @ORM\Entity(repositoryClass="Sb\AppBundle\Entity\Repository\TaskRepository")
+ * @ORM\Entity(repositoryClass="Sb\AppBundle\Repository\TaskRepository")
  */
 class Task
 {
