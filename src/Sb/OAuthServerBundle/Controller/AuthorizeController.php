@@ -5,7 +5,7 @@ use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
 use FOS\OAuthServerBundle\Controller\AuthorizeController as BaseAuthorizeController;
 use Sb\OAuthServerBundle\Form\Model\Authorize;
-use Sb\AppBundle\Entity\OAuth\Client;
+use Sb\OAuthServerBundle\Entity\Client;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AuthorizeController extends BaseAuthorizeController

@@ -8,8 +8,8 @@
         </service>
 
         <service id="sb_oauth_server.authorize.form" factory-method="createNamed" factory-service="form.factory" class="Symfony\Component\Form\Form">
-            <argument type="service" id="sb_oauth_server.authorize.form_type" />
             <argument>sb_oauth_server_auth</argument>
+            <argument type="service" id="sb_oauth_server.authorize.form_type" />
         </service>
 
         <service id="sb_oauth_server.authorize.form_handler" class="Sb\OAuthServerBundle\Form\Handler\AuthorizeFormHandler" scope="request">

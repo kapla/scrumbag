@@ -30,7 +30,7 @@ class AuthorizeFormHandler
 
         if ($this->request->getMethod() == 'POST') {
 
-            $this->form->bindRequest($this->request);
+            $this->form->bind($this->request);
 
             if ($this->form->isValid()) {
 
