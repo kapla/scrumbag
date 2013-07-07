@@ -21,11 +21,24 @@ class ProductController extends BaseController
      *
      * @Route("/", name="product_all", defaults={"_format" = "~"})
      * @Method({"GET"})
-     * @Rest\View()
+     * @Rest\View
      */
     public function allAction()
     {
         $em       = $this->getDoctrine()->getManager();
+
+        $user = $this->get('security.context')->getToken()->getUser();
+
+        error_log($user->getId());
+
+        $product = new Product();
+        $product->setName('Test');
+        $product->setDescription('description');
+        $product->setScrumMaster($user);
+        $em->persist($product);
+        $em->flush();
+
+
         $products = $em->getRepository('SbAppBundle:Product')->findAll();
 
         return array('products' => $products);

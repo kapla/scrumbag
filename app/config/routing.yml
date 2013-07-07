@@ -1,7 +1,7 @@
 sb_app:
     resource: "@SbAppBundle/Controller"
     type:     annotation
-    prefix:   /
+    prefix:   /api/
 
 # # app/config/routing.yml
 # fos_user_security:
