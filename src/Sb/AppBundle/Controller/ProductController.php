@@ -33,8 +33,6 @@ class ProductController extends BaseController
         $em       = $this->getDoctrine()->getManager();
         $products = $em->getRepository('SbAppBundle:Product')->findAll();
 
-        error_log(AcceptHeader::fromString($request->headers->get('Accept')));
-
         $serializer = $this->container->get('jms_serializer');
         $data = $serializer->serialize(
             $products,
