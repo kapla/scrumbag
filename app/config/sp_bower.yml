@@ -1,0 +1,11 @@
+sp_bower:
+    bin: %bower_path%
+    bundles:
+        SbAppBundle: ~
+    assetic:
+        enabled: true
+        filters:
+            css:
+                - cssrewrite
+            js:
+                - ?uglifyjs

@@ -1,0 +1,84 @@
+{% extends '::base.html.twig' %}
+
+{% block container %}
+
+<div class="container-fluid mp-perspective" ng-controller="SprintController" ui-keyup="{'esc':'escapePressed($event)'}">
+    <div class="row-fluid">
+        <div class="span12">
+            <form class="form-search form-omnibar" ng-submit="omnibarSubmit()">
+                <div class="input-append">
+                    <input type="text" class="span12 search-query" id="omnibar" ng-model="omnibar.value" ng-change="onmibarChange()">
+                    <button type="submit" class="btn ng-cloak">{[{ omnibar.create && 'Create' || 'Search' }]}</button>
+                </div>
+            </form>
+
+            <div class="status-zone">
+                <h2>Backlog</h2>
+                <ul class="backlog task-list">
+                    <li ng-repeat="task in tasks | filter:{position:'backlog'}" class="ng-cloak task" ng-class="task.status + ' ' + (((tasks | filter:{$:omnibar.value}).length == 1) && 'single' || 'not-single') + ' ' + ((([task] | filter:{$:omnibar.value}).length) && 'visible' || 'not-visible')">
+                        <div class="container">
+                            <div class="front face">
+                                <header>
+                                    <h3 ng-click="omnibar.value = task.title">{[{ task.title }]}</h3>
+                                    <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
+                                </header>
+                                <div class="content">
+                                    {[{ task.description }]}
+                                </div>
+                                <footer>
+                                    {[{ task.duration }]}
+                                </footer>
+                            </div>
+                            <div class="back face">
+                                <header>
+                                    <h3 >{[{ task.title }]}</h3>
+                                    <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
+                                </header>
+                                <div class="content">
+                                    EDIT
+                                </div>
+                                <footer>
+                                    {[{ task.duration }]}
+                                </footer>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>Sprint</h2>
+            <ul class="task-list">
+                <li class="ng-cloak task paper-shadow" ng-repeat="task in tasks | filter:{$:omnibar.value, position:'sprint'}">
+                    <div class="container">
+                        <header>
+                            <h3>{[{ task.title }]}</h3>
+                            <span class="delete-button" ng-click="deleteTask(task)">&times;</span>
+                        </header>
+                        <div class="content">
+                            {[{ task.description }]}
+                        </div>
+                        <footer>
+                            {[{ task.duration }]}
+                        </footer>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <form name="createTaskForm.form">
+            <div class="md-modal md-effect {[{ createTaskForm.active && 'md-show' || ''}]}" id="create-task-modal">
+                <div class="md-content">
+                    <header>
+                        <input type="text" ng-model="createTaskForm.form.title" id="create-task-title" required/>
+                    </header>
+                    <div class="content">
+
+                    </div>
+                    <footer>
+                        {[{ form }]}
+                    </footer>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+{% endblock container %}

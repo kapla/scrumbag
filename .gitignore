@@ -7,9 +7,16 @@ vendor/*
 */cache/*
 web/uploads/*
 web/bundles/*
+web/assetic/*
+web/js
+web/css
 
 # Configuration files
 app/config/parameters.yml
 
 composer.phar
 /nbproject/
+
+src/*/*/Resources/public/components/*
+
+npm-debug.log

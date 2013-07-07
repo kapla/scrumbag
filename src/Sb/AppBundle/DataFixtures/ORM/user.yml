@@ -1,0 +1,42 @@
+Sb\AppBundle\Entity\User:
+    admin:
+        username:       admin
+        email (unique): admin@scrumbag.fr
+        plainPassword:  admin
+        roles:          [ROLE_ADMIN]
+        enabled:        true
+        locked:         false
+    user{0...10}:
+        username:       user<current()>
+        email (unique): user<current()>@scrumbag.fr
+        plainPassword:  test
+        roles:          [ROLE_USER]
+        enabled:        true
+        locked:         false
+
+Sb\AppBundle\Entity\Product:
+    product{1...100}:
+        name:        <catchPhrase()>
+        description: <sentence()>
+        scrumMaster: @user*
+
+Sb\OAuthServerBundle\Entity\Client:
+    ScrumBagClient:
+        name:         ScrumBag
+        randomId:     55fkb5c6tkw0k4gkgocsco40c048scco0c8ogo80kgsgo8kkww
+        redirectUris: ["http://scrumbag.dev/app_dev.php/"]
+        secret:       303ecjbbe52c08www8wgs4w0gswowgc00w0k4ogko04os08o40
+
+Sb\OAuthServerBundle\Entity\RefreshToken:
+    ScrumBagRefreshToken:
+        client:    @ScrumBagClient
+        user:      @admin
+        token:     ZjhmMjM4YjExN2IwYTJiOTU0NmUyY2QzM2Y5MGU2OTRiY2IxZmMwM2M4NmVjY2U3M2Y2Y2I1NGFhOWFjYmRlOA
+        expiresAt: 1474420862
+
+Sb\OAuthServerBundle\Entity\AccessToken:
+    ScrumBagAccessToken:
+        client:    @ScrumBagClient
+        user:      @admin
+        token:     MmI4YjFhN2MwOTU4Yjc1MmQyYzk1M2ZiNDRhMTAwMzIwMzRkYmE5MzIzNmI3ZDE1ZDFjYjExY2UyMzEyNzc4OQ
+        expiresAt: 1474420862

@@ -1,0 +1,19 @@
+sensio_framework_extra:
+    view:
+        annotations: false
+
+fos_rest:
+    view:
+        view_response_listener: true
+        formats:
+            json: true
+            rss: true
+            xml: true
+        default_engine: json
+    service:
+        serializer: jms_serializer.serializer
+    serializer:
+        version:        ~
+        groups:         ['list', 'details']
+        serialize_null: false
+    param_fetcher_listener: force

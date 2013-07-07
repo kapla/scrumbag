@@ -1,0 +1,8 @@
+fos_oauth_server:
+    db_driver: orm       # Driver availables: orm, mongodb, or propel
+    client_class:        Sb\OAuthServerBundle\Entity\Client
+    access_token_class:  Sb\OAuthServerBundle\Entity\AccessToken
+    refresh_token_class: Sb\OAuthServerBundle\Entity\RefreshToken
+    auth_code_class:     Sb\OAuthServerBundle\Entity\AuthCode
+    service:
+        user_provider: fos_user.user_manager
