@@ -16,7 +16,7 @@ parameters:
     locale:                 fr
     secret:                 5crumb4g!
     bin_path:               /usr/local/bin
-    bower_path:             %bin_path%/bower
+    bower_path:             bower
     node_path:              %bin_path%/node
     node_paths:             ['/usr/local/lib/node_modules', /usr/local/share/npm/lib/node_modules]
     uglify_path:            %bin_path%/uglifyjs
